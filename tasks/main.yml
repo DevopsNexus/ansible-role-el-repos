@@ -1,0 +1,8 @@
+---
+- name: installing epel repo
+  yum: name=epel-release state=installed
+  when: epel
+
+- name: installing remi repo
+  yum: name=http://rpms.famillecollet.com/enterprise/remi-release-{{ ansible_distribution_major_version }}.rpm state=installed
+  when: remi
